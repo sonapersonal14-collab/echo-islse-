@@ -12,6 +12,8 @@
             font-family: 'Quicksand', sans-serif;
             background-color: #f0f9ff;
             overflow-x: hidden;
+            margin: 0;
+            padding: 0;
         }
         h1, h2, h3 {
             font-family: 'Fredoka', sans-serif;
@@ -24,15 +26,29 @@
             50% { transform: scale(1.1); opacity: 0.4; }
             100% { transform: scale(1); opacity: 0.8; }
         }
+        .animate-fadeIn {
+            animation: fadeIn 0.8s ease-out forwards;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .animate-scaleIn {
+            animation: scaleIn 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+        }
+        @keyframes scaleIn {
+            from { opacity: 0; transform: scale(0.9); }
+            to { opacity: 1; transform: scale(1); }
+        }
     </style>
 <script type="importmap">
 {
   "imports": {
-    "lucide-react": "https://esm.sh/lucide-react@^0.562.0",
-    "react/": "https://esm.sh/react@^19.2.3/",
     "react": "https://esm.sh/react@^19.2.3",
     "react-dom/": "https://esm.sh/react-dom@^19.2.3/",
+    "react/": "https://esm.sh/react@^19.2.3/",
     "@google/genai": "https://esm.sh/@google/genai@^1.38.0",
+    "lucide-react": "https://esm.sh/lucide-react@^0.562.0",
     "vite": "https://esm.sh/vite@^7.3.1",
     "@vitejs/plugin-react": "https://esm.sh/@vitejs/plugin-react@^5.1.2"
   }
@@ -41,5 +57,7 @@
 </head>
 <body>
     <div id="root"></div>
+    <!-- This script tag is essential for Vite to bundle and run your React app -->
+    <script type="module" src="/index.tsx"></script>
 </body>
 </html>
