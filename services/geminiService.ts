@@ -24,7 +24,12 @@ export async function generateIslandLore(islandName: string, treasureType: strin
       }
     });
 
-    return JSON.parse(response.text.trim());
+    const text = response.text;
+    if (!text) {
+      throw new Error("Empty response from AI");
+    }
+
+    return JSON.parse(text.trim());
   } catch (error) {
     console.error("Gemini Error:", error);
     return {
