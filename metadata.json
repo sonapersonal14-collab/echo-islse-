@@ -1,0 +1,7 @@
+{
+  "name": "Copy of Echo Isles: Rhythm of Treasures - Game Concept & Demo",
+  "description": "An interactive game concept showcase and prototype for 'Echo Isles', a rhythm-based 2D treasure hunting adventure.",
+  "requestFramePermissions": [
+    "microphone"
+  ]
+}
